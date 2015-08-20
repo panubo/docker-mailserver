@@ -1,0 +1,5 @@
+user = {{ DB_MAIL_USER }}
+password = {{ DB_MAIL_PASS }}
+hosts = {{ DB_MAIL_HOST }}
+dbname = {{ DB_MAIL_NAME }}
+query = SELECT destination FROM v_email_catchall WHERE source='%d'

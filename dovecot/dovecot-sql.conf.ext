@@ -1,0 +1,6 @@
+driver = mysql
+connect = host={{ DB_MAIL_HOST }} dbname={{ DB_MAIL_NAME }} user={{ DB_MAIL_USER }} password={{ DB_MAIL_PASS }}
+default_pass_scheme = CRYPT
+# user query shouldn't be actually used
+user_query = SELECT email AS user, password, 5000 AS uid, 5000 AS gid, '/var/vmail/%d/%n' AS home FROM v_email_users WHERE email = '%u'; 
+password_query = SELECT email as user, password FROM v_email_users WHERE email='%u';
