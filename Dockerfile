@@ -8,7 +8,7 @@ RUN yum -y install epel-release && yum -y update && \
     # Add mail virtual user
     useradd vmail -d /var/vmail --uid 5000 --shell /bin/false && rm -f /var/vmail/.bash*
 
-EXPOSE 25 587
+EXPOSE 25 465 587 993 995
 
 VOLUME ["/var/vmail", "/var/spool/mail"]
 
