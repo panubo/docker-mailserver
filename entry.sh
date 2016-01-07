@@ -69,9 +69,6 @@ for K in TLS_KEY TLS_CRT TLS_CA; do
     [ ! -f "$(eval echo \$$K)" ] && echo "$K not found at $(eval echo \$$K)" && exit 128
 done
 
-# Configure Rsyslog: Disable mail logs
-sed -i -e 's@^mail.*@@g' /etc/rsyslog.conf
-
 # Create logging FIFO
 mkfifo /dev/consolelog
 

@@ -6,7 +6,16 @@ RUN yum -y install epel-release && yum -y update && \
     curl -q https://raw.githubusercontent.com/voltgrid/voltgrid-pie/master/voltgrid.py -o /usr/local/bin/voltgrid.py && \
     chmod +x /usr/local/bin/voltgrid.py && yum -y install python-jinja2 && \
     # Add mail virtual user
-    useradd vmail -d /var/vmail --uid 5000 --shell /bin/false && rm -f /var/vmail/.bash*
+    useradd vmail -d /var/vmail --uid 5000 --shell /bin/false && rm -f /var/vmail/.bash* && \
+    # Configure Rsyslog: Disable mail logs
+    sed -i -e 's@^mail.*@@g' /etc/rsyslog.conf && \
+    # Disable kernel logging
+    sed -i -e 's@$ModLoad imklog@#$ModLoad imklog@g' /etc/rsyslog.conf && \
+    # Upgrade supervisor from PyPi (no deps because of https://github.com/puphpet/puphpet/issues/1492)
+    yum -y install python-pip && \
+    pip install --no-deps --upgrade supervisor && \
+    # Cleanup
+    rm -rf /var/cache/yum/*
 
 EXPOSE 25 465 587 993 995
 
