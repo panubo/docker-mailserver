@@ -57,7 +57,7 @@ if [ -z "$MAILNAME" ]; then
 fi
 
 if [ -z "$MYNETWORKS" ]; then
-    export MYNETWORKS='127.0.0.0/8, 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16'
+    export MYNETWORKS='127.0.0.0/8, 10.0.0.0/8, 192.168.0.0/16'
     echo "Warning: MYNETWORKS not specified, allowing all private IPs"
 fi
 
