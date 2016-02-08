@@ -11,6 +11,8 @@ RUN yum -y install epel-release && yum -y update && \
     sed -i -e 's@^mail.*@@g' /etc/rsyslog.conf && \
     # Disable kernel logging
     sed -i -e 's@$ModLoad imklog@#$ModLoad imklog@g' /etc/rsyslog.conf && \
+    # Cache spool dir as template
+    cp -a /var/spool/postfix /var/spool/postfix.cache && \
     # Upgrade supervisor from PyPi (no deps because of https://github.com/puphpet/puphpet/issues/1492)
     yum -y install python-pip && \
     pip install --no-deps --upgrade supervisor && \

@@ -2,6 +2,13 @@
 
 set -e
 
+[ "$DEBUG" == 'true' ] && set -x
+
+# Copy default spool from cache
+if [ ! "$(ls -A /var/spool/postfix)" ]; then
+   cp -a /var/spool/postfix.cache/* /var/spool/postfix/
+fi
+
 # TODO: update postmaster in /etc/aliases
 export ADMIN_EMAIL=${ADMIN_EMAIL-postmaster}
 
