@@ -1,6 +1,6 @@
 # Mailserver
 
-[![Docker Repository on Quay.io](https://quay.io/repository/macropin/mailserver/status "Docker Repository on Quay.io")](https://quay.io/repository/macropin/mailserver)
+[![Docker Repository on Quay](https://quay.io/repository/panubo/mailserver/status "Docker Repository on Quay")](https://quay.io/repository/panubo/mailserver)
 
 All in one mailserver.
 
