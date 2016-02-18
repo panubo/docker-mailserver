@@ -5,7 +5,7 @@ set -e
 [ "$DEBUG" == 'true' ] && set -x
 
 # Allow bypass initialisation
-if [ "$1" != "/usr/local/bin/voltgrid.py" ]; then
+if [ "$1" != "supervisord" ]; then
    exec "$@"
 fi
 
