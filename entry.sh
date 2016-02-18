@@ -5,8 +5,8 @@ set -e
 [ "$DEBUG" == 'true' ] && set -x
 
 # Allow bypass initialisation
-if [ $1 != "/usr/local/bin/voltgrid.py" ]; then
-   exec "$1"
+if [ "$1" != "/usr/local/bin/voltgrid.py" ]; then
+   exec "$@"
 fi
 
 # Copy default spool from cache
