@@ -47,8 +47,8 @@ if [ -z "$DB_MAIL_HOST" ]; then
 fi
 
 if [ "$MARIADB_PORT_3306_TCP_PORT}" == "3306" ]; then
-	echo "Error: MYSQL on port other than 3306 not suported"
-	exit 128
+    echo "Error: MYSQL on port other than 3306 not suported"
+    exit 128
 fi
 
 if [ -z "$MYDOMAIN" ]; then
@@ -72,7 +72,7 @@ fi
 
 # Generate SSL Key.
 if [ "$GENERATE_TLS" == "true" ]; then
-	echo "Generating TLS Key / Cert"
+    echo "Generating TLS Key / Cert"
     openssl req -x509 -newkey rsa:2048 -keyout $TLS_KEY -out $TLS_CRT -subj "/CN=$MAILNAME/O=ACME Widgets Inc./C=US" -nodes -days 1024
     chmod 600 $TLS_KEY && touch $TLS_CA
 fi
@@ -80,9 +80,6 @@ fi
 for K in TLS_KEY TLS_CRT TLS_CA; do
     [ ! -f "$(eval echo \$$K)" ] && echo "$K not found at $(eval echo \$$K)" && exit 128
 done
-
-# Create logging FIFO
-mkfifo /dev/consolelog
 
 echo "Exec'ing $@"
 exec "$@"
