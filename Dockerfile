@@ -14,6 +14,8 @@ RUN yum -y install epel-release && yum -y update && \
     pip install --no-deps --upgrade supervisor && \
     # Cleanup
     rm -rf /var/cache/yum/* && \
+    # Disable logrotate
+    rm -f /etc/cron.daily/logrotate && \
     # Ensure freshclam has run
     rm -f /var/lib/clamav/* && \
     freshclam
