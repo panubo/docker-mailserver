@@ -2,22 +2,29 @@
 
 [![Docker Repository on Quay](https://quay.io/repository/panubo/mailserver/status "Docker Repository on Quay")](https://quay.io/repository/panubo/mailserver)
 
-All in one mailserver.
+All in one mailserver designed to work with [Mailmanager](https://github.com/voltgrid/mailmanager) for user account creation and management.
+
+[Roundcube](https://github.com/macropin/docker-roundcube) is a great webmail
+that works well with this container.
 
 Features:
 
 - Postfix
 - Dovecot (IMAP / POP3)
 - ClamAV / Amavisd
-- Spamassasin
-- MySQL backend for authentication
+- Spamassasin (with self-update)
+- MySQL backend for authentication (use official `docker.io/mariadb` container)
 - SSL / TLS for all services
 
+## Environment
 
-## Mailmanager
+See `entry.sh` for the environment variables used to configure the container.
 
-This is designed to work with [Mailmanager](https://github.com/voltgrid/mailmanager) for user account creation and management.
+## Status
 
-## Roundcube
+Stable. Used in production on a small scale for many years now
+without any known issues.
 
-[Roundcube](https://github.com/macropin/docker-roundcube) is a great webmail that works well with this container.
+# TODO
+
+Documentation is lacking.
