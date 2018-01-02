@@ -1,7 +1,5 @@
 # Mailserver
 
-[![Docker Repository on Quay](https://quay.io/repository/panubo/mailserver/status "Docker Repository on Quay")](https://quay.io/repository/panubo/mailserver)
-
 All in one mailserver designed to work with [Mailmanager](https://github.com/voltgrid/mailmanager) for user account creation and management.
 
 [Roundcube](https://github.com/macropin/docker-roundcube) is a great webmail
