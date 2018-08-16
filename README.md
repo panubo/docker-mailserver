@@ -1,9 +1,9 @@
-# Mailserver
+# Mailserver Image
 
-All in one mailserver designed to work with [Mailmanager](https://github.com/voltgrid/mailmanager) for user account creation and management.
+All in one mailserver image designed to work with [Mailmanager](https://github.com/voltgrid/mailmanager) for user account creation and management.
 
 [Roundcube](https://github.com/macropin/docker-roundcube) is a great webmail
-that works well with this container.
+that works well with this image.
 
 Features:
 
