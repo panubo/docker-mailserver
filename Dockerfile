@@ -11,7 +11,7 @@ RUN yum -y install epel-release && yum -y update && \
     cp -a /var/spool/postfix /var/spool/postfix.cache && \
     # Upgrade supervisor from PyPi (no deps because of https://github.com/puphpet/puphpet/issues/1492)
     yum -y install python-pip && \
-    pip install --no-deps --upgrade supervisor && \
+    pip install --no-deps --upgrade supervisor==3.4.0 && \
     # Cleanup
     rm -rf /var/cache/yum/* && \
     # Disable logrotate
@@ -39,4 +39,3 @@ COPY spamassassin/ /etc/mail/spamassassin/
 ENTRYPOINT ["/entry.sh", "/usr/local/bin/voltgrid.py"]
 
 CMD ["supervisord", "-n", "-c", "/etc/supervisord.conf"]
-
