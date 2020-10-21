@@ -21,7 +21,7 @@ See `entry.sh` for the environment variables used to configure the container.
 ## Status
 
 Stable. Used in production on a small scale for many years now
-without any known issues.
+without any known issues. However since this is based on CentOS 6, new deployments are discouraged.
 
 # TODO
 
